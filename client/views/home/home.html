@@ -1,0 +1,62 @@
+<template name="home">
+	{{# unless currentUser }}
+	<p><b>Register to edit the content of this site</b></p>
+	{{/ unless }}
+	<p>
+		Orion allows the admin to easily
+		<a href="{{ pathFor 'dictionary.update' }}">edit</a>
+		content of the site, like the following text:
+		<i class="text-muted">"{{ dict 'public.homeText' }}"</i>.
+	</p>
+	{{# if subsReady "currentPost" }}
+		{{# each posts }}
+			{{> homePost }}
+		{{ else }}
+			{{> notfound}}
+		{{/ each }}
+	{{ else }}
+		<p>
+			Loading...
+		</p>
+	{{/ if }}
+
+</template>
+
+<template name="notfound">
+	<p>
+		No posts found
+	</p>
+</template>
+<template name="homePost">
+	<hr>
+	<div class="home-post">
+		<h3>
+			<a href="" style="color: #333">
+				{{ title }}
+			</a>
+		</h3>
+		{{# if image }}
+		<a href="{{ pathFor 'post' }}">
+			<div class="image" style="background-image: url({{ image.url }})"></div>
+		</a>
+		{{/ if }}
+		<p>
+			by <b>{{ getCreator.profile.name }}</b>
+		</p>
+		<span>
+			{{# if currentUser }}
+			<a href="#" class="like-btn" style="{{# if likes currentUser._id }}color: #337ab7;{{ else }}color: #999;{{/ if }} margin-right: 7px; text-decoration: none">
+				<span style="margin-right: 3px;">{{ likesCount }}</span> <small><i class="fa fa-thumbs-up"></i></small>
+			</a>
+			{{ else }}
+				<a href="admin/login?ref=%2F">Login to like posts</a>
+				<span class="color: #999;">
+					<span style="margin-right: 3px;">{{ likesCount }}</span> <small><i class="fa fa-thumbs-up"></i></small>
+				</span>
+			{{/ if }}
+			<a href="#" class="flag-btn" style="color: #999">
+				<small><i class="fa fa-flag"></i></small>
+			</a>
+		</span>
+	</div>
+</template>

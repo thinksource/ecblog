@@ -1,0 +1,78 @@
+# Meteor packages used by this project, one per line.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+meteor-base             # Packages every Meteor app needs to have
+mobile-experience       # Packages for a great mobile UX
+mongo                   # The database Meteor supports right now
+blaze-html-templates    # Compile .html files into Meteor Blaze views
+session                 # Client-side reactive dictionary for your app
+jquery                  # Helpful client-side library
+tracker                 # Meteor's client-side reactive programming library
+
+standard-minifiers      # JS/CSS minifiers run for production mode
+es5-shim                # ECMAScript 5 compatibility for older browsers.
+ecmascript              # Enable ECMAScript2015+ syntax in app code
+
+logging
+
+### nicolaslopezj:router-layer
+
+## Orion
+orionjs:core
+orionjs:pages
+
+## Files
+orionjs:filesystem
+vsivsi:orion-file-collection
+orionjs:image-attribute
+orionjs:file-attribute
+
+orionjs:froala
+orionjs:relationships
+##orionjs:lang-es
+
+## Editor
+orionjs:summernote
+
+## Styles
+twbs:bootstrap
+fortawesome:fontawesome
+orionjs:bootstrap
+less
+
+## Router
+kadira:flow-router
+kadira:blaze-layout
+
+
+#accounts
+accounts-password
+ian:accounts-ui-bootstrap-3
+useraccounts:flow-routing
+useraccounts:bootstrap
+
+reywood:publish-composite
+dburles:collection-helpers
+
+
+
+reload
+random
+ejson
+spacebars
+check
+matb33:collection-hooks
+mizzao:user-status
+
+email
+
+
+## Test
+msavin:mongol
+
+## Export
+nicolaslopezj:orion-exporter
+underscore
+arillo:flow-router-helpers

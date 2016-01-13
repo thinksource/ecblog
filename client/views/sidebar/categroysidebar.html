@@ -1,0 +1,22 @@
+<template name="categorysidebar">
+  <!-- <ul class="list-unstyled sid-nav row">
+    <li class="cursive huge">
+      <a href="/category/example">Example categoryName</a>
+    </li>
+    <li class="cursive huge">
+      <a href="/category/{{name}}">{{name}}Example categoryName</a>
+    </li>
+    <li class="cursive huge">
+      <a href="/category/{{name}}">{{name}}Example categoryName</a>
+    </li>
+  </ul> -->
+  <div class="sidebar-wrapper">
+    <div class="col-md-12 hidden-sm hidden-xs">
+      <ul class="list-unstyled sidebar-nav" id="treel">
+        {{#each categories}}
+          <li class="sidebar-brand"><a href="/category/{{value}}">{{label}}</a></li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</template>

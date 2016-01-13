@@ -1,0 +1,26 @@
+<template name="post">
+
+	{{# if Template.subscriptionsReady }}
+		{{# with post }}
+			<div class="post-detail">
+				<h3>
+					{{ title }}
+					<small>by {{ getCreator.profile.name }}</small>
+				</h3>
+				<div class="image" style="background-image: url({{ image.url }})"></div>
+				<br>
+				<div class="content">
+					{{{ body }}}
+				</div>
+			</div>
+		{{ else }}
+			<p>
+				Not found
+			</p>
+		{{/ with }}
+	{{ else }}
+		<p>
+			Loading...
+		</p>
+	{{/ if }}
+</template>
